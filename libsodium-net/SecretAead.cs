@@ -84,7 +84,7 @@ namespace Sodium
     /// <param name="cipher">The cipher to be decrypted.</param>
     /// <param name="nonce">The 8 byte nonce.</param>
     /// <param name="key">The 32 byte key.</param>
-    /// <param name="additionalData">The additional data. RFC 7539 says AAD can be any length.</param>
+    /// <param name="additionalData">The additional data.</param>
     /// <returns>The decrypted cipher.</returns>
     /// <exception cref="KeyOutOfRangeException"></exception>
     /// <exception cref="NonceOutOfRangeException"></exception>

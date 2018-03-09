@@ -9,8 +9,9 @@ namespace Tests
   {
     /// <summary>Test Authenticated Encryption with Additional Data</summary>
     /// <remarks>Binary source from: https://github.com/jedisct1/libsodium/blob/master/test/default/aead_chacha20poly1305.c</remarks>
-    [Test]
-    public void AeadWithAdditionalDataTest()
+    [TestCase(false)]
+    [TestCase(true)]
+    public void AeadWithAdditionalDataTest(bool useXChaCha)
     {
       var key = new byte[]
       {
@@ -34,8 +35,8 @@ namespace Tests
         0x86, 0xd0, 0x99, 0x74, 0x84, 0x0b, 0xde, 0xd2, 0xa5, 0xca
       };
 
-      var encrypted = SecretAead.Encrypt(m, nonce, key, ad);
-      var decrypted = SecretAead.Decrypt(encrypted, nonce, key, ad);
+      var encrypted = SecretAead.Encrypt(m, nonce, key, ad, useXChaCha);
+      var decrypted = SecretAead.Decrypt(encrypted, nonce, key, ad, useXChaCha);
 
       CollectionAssert.AreEqual(m, decrypted);
     }

@@ -16,7 +16,7 @@
             <reference file="Sodium.dll" />
         </references>
         <dependencies>
-            <dependency id="Baseclass.Contrib.Nuget.Output" version="2.1.0" />
+            <dependency id="Baseclass.Contrib.Nuget.Output" version="2.4.3" />
         </dependencies>
     </metadata>
     <files>
